@@ -6,7 +6,7 @@
 /*   By: zaalrafa <zaalrafa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/25 22:20:07 by zaalrafa          #+#    #+#             */
-/*   Updated: 2025/08/28 15:13:41 by zaalrafa         ###   ########.fr       */
+/*   Updated: 2025/09/02 15:28:09 by zaalrafa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,21 @@ static char	*assign_word(char const *s, int start, int end)
 	return (str);
 }
 
-char	**ft_split(char const *s, char c)
+static char	**free_words(char **arr)
 {
-	char	**arr;
+	size_t	i;
+
+	i = 0;
+	while (arr[i])
+	{
+		free(arr[i]);
+		i++;
+	}
+	return (arr);
+}
+
+static int	main_while(char **arr, char const *s, char c)
+{
 	int		i;
 	int		j;
 	int		start;
@@ -62,19 +74,39 @@ char	**ft_split(char const *s, char c)
 	i = -1;
 	start = -1;
 	j = 0;
-	arr = (char **) malloc((count_word(s, c) + 1) * sizeof(char *));
-	if (!arr)
-		return (NULL);
 	while (++i <= (int)ft_strlen(s))
 	{
 		if (s[i] != c && start < 0)
 			start = i;
 		else if (start >= 0 && (s[i] == c || i == (int)ft_strlen(s)))
 		{
-			arr[j++] = assign_word(s, start, i);
+			arr[j] = assign_word(s, start, i);
+			if (!arr[j])
+			{
+				free_words(arr);
+				free(arr);
+				return (-1);
+			}
+			j++;
 			start = -1;
 		}
 	}
+	return (j);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**arr;
+	int		j;
+
+	if (!s)
+		return (NULL);
+	arr = (char **) malloc((count_word(s, c) + 1) * sizeof(char *));
+	if (!arr)
+		return (NULL);
+	j = main_while(arr, s, c);
+	if (j == -1)
+		return (NULL);
 	arr[j] = 0;
 	return (arr);
 }
