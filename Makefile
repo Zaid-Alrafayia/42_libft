@@ -10,51 +10,63 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME    = libft.a
+CC      = cc
+CFLAGS  = -Wall -Werror -Wextra -I.
+AR      = ar rcs
+RM      = rm -f
 
-CC = cc
+# --- Mandatory Sources (libft, printf, gnl) ---
+SRCS =  ascii/ft_isalnum.c ascii/ft_isalpha.c ascii/ft_isascii.c \
+        ascii/ft_isdigit.c ascii/ft_isprint.c \
+        convert/ft_atoi.c convert/ft_itoa.c convert/hexconvert.c \
+        convert/point_conv.c \
+        math/ft_abs.c \
+        mem/ft_bzero.c mem/ft_calloc.c mem/ft_memchr.c mem/ft_memcmp.c \
+        mem/ft_memcpy.c mem/ft_memmove.c mem/ft_memset.c \
+        put/ft_putchar_fd.c put/ft_putendl_fd.c put/ft_putnbr_fd.c \
+        put/ft_putstr_fd.c put/print_num.c put/print_str.c \
+        put/print_unum.c \
+        str/ft_split.c str/ft_strchr.c str/ft_strdup.c str/ft_striteri.c \
+        str/ft_strjoin.c str/ft_strlcat.c str/ft_strlcpy.c str/ft_strlen.c \
+        str/ft_strmapi.c str/ft_strncmp.c str/ft_strnstr.c str/ft_strrchr.c \
+        str/ft_strtrim.c str/ft_substr.c str/ft_tolower.c str/ft_toupper.c \
+        printf/ft_printf.c \
+        gnl/get_next_line.c gnl/get_next_line_utils.c
 
-CFLAGS = -Wall -Werror -Wextra
+# --- Bonus Sources (Linked Lists & GNL Bonus) ---
+SRCS_B = lst/ft_lstadd_back_bonus.c lst/ft_lstadd_front_bonus.c \
+         lst/ft_lstclear_bonus.c lst/ft_lstdelone_bonus.c \
+         lst/ft_lstiter_bonus.c lst/ft_lstlast_bonus.c \
+         lst/ft_lstmap_bonus.c lst/ft_lstnew_bonus.c \
+         lst/ft_lstsize_bonus.c \
+         gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c
 
-AR = ar rcs
+# --- Object File Generation ---
+OBJS    = $(SRCS:.c=.o)
+OBJS_B  = $(SRCS_B:.c=.o)
 
-RM= rm -f
+# Default Rule
+all: $(NAME)
 
-SRCS = ft_itoa.c ft_split.c ft_strncmp.c \
-	ft_atoi.c ft_memchr.c ft_strchr.c ft_strnstr.c \
-	ft_bzero.c ft_memcpy.c ft_strdup.c ft_strrchr.c \
-	ft_calloc.c  ft_memmove.c ft_striteri.c ft_strtrim.c \
-	ft_isalnum.c  ft_memset.c ft_strjoin.c ft_substr.c \
-	ft_isalpha.c  ft_putchar_fd.c ft_strlcat.c ft_tolower.c \
-	ft_isascii.c  ft_putendl_fd.c ft_strlcpy.c ft_toupper.c \
-	ft_isdigit.c  ft_putnbr_fd.c ft_strlen.c ft_memcmp.c \
-	ft_isprint.c  ft_putstr_fd.c ft_strmapi.c
+# Compile the Static Library
+$(NAME): $(OBJS)
+	$(AR) $(NAME) $(OBJS)
 
-SRCS_B = ft_lstsize_bonus.c ft_lstadd_back_bonus.c ft_lstadd_front_bonus.c ft_lstmap_bonus.c \
-	ft_lstnew_bonus.c ft_lstiter_bonus.c ft_lstlast_bonus.c ft_lstclear_bonus.c ft_lstdelone_bonus.c
+# Bonus Rule (Compiles everything including linked lists)
+bonus: $(OBJS) $(OBJS_B)
+	$(AR) $(NAME) $(OBJS) $(OBJS_B)
 
-OBJS = ${SRCS:.c=.o}
+# Standard Compilation Rule
+%.o: %.c libft.h
+	$(CC) $(CFLAGS) -c $< -o $@
 
-OBJS_B = ${SRCS_B:.c=.o}
-
-%.o: %.c
-	$(CC) $(CFLAGS) -I. -c $< -o $@
-
-${NAME}: ${OBJS}
-	${AR} ${NAME} ${OBJS}
-
-all: ${NAME}
-
-bonus:	${OBJS_B}
-		${AR} ${NAME} ${OBJS_B}
-
+# Cleanup Rules
 clean:
-	${RM} ${OBJS} ${OBJS_B}
-
-$(OBJS) $(OBJS_B): libft.h
+	$(RM) $(OBJS) $(OBJS_B)
 
 fclean: clean
-	${RM} ${NAME}
+	$(RM) $(NAME)
 
 re: fclean all
 

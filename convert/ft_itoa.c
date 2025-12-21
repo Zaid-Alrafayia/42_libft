@@ -58,7 +58,7 @@ char	*ft_itoa(int n)
 		num = -num;
 	}
 	len = digit_count(num) + isneg;
-	str = (char *) malloc((len + 1));
+	str = (char *)malloc((len + 1));
 	if (!str)
 		return (NULL);
 	str[len] = '\0';
