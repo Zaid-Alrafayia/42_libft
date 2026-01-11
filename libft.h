@@ -6,7 +6,7 @@
 /*   By: zaalrafa <zaalrafa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 00:06:37 by zaalrafa          #+#    #+#             */
-/*   Updated: 2026/01/11 11:24:48 by zaalrafa         ###   ########.fr       */
+/*   Updated: 2026/01/12 00:37:00 by zaalrafa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -43,6 +43,8 @@ char				*ft_strjoin(char const *s1, char const *s2);
 // endif
 
 // libft
+int					ft_max(int a, int b);
+int					ft_min(int a, int b);
 size_t				ft_strlen(const char *str);
 size_t				ft_strlcpy(char *dest, const char *src, size_t n);
 void				*ft_memset(void *s, int c, size_t n);

@@ -6,7 +6,7 @@
 #    By: zaalrafa <zaalrafa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/28 02:08:29 by zaalrafa          #+#    #+#              #
-#    Updated: 2026/01/11 11:25:33 by zaalrafa         ###   ########.fr        #
+#    Updated: 2026/01/12 00:37:11 by zaalrafa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,12 +32,14 @@ SRCS =  ascii/ft_isalnum.c ascii/ft_isalpha.c ascii/ft_isascii.c \
         str/ft_strmapi.c str/ft_strncmp.c str/ft_strnstr.c str/ft_strrchr.c \
         str/ft_strtrim.c str/ft_substr.c str/ft_tolower.c str/ft_toupper.c \
         printf/ft_printf.c \
-        gnl/get_next_line.c gnl/get_next_line_utils.c lst/ft_lstadd_back_bonus.c lst/ft_lstadd_front_bonus.c \
+        gnl/get_next_line.c gnl/get_next_line_utils.c \
+				lst/ft_lstadd_back_bonus.c lst/ft_lstadd_front_bonus.c \
          lst/ft_lstclear_bonus.c lst/ft_lstdelone_bonus.c \
          lst/ft_lstiter_bonus.c lst/ft_lstlast_bonus.c \
          lst/ft_lstmap_bonus.c lst/ft_lstnew_bonus.c \
          lst/ft_lstsize_bonus.c \
-         gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c lst/ft_lstmax.c lst/ft_lstmin.c
+         gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c \
+				lst/ft_lstmax.c lst/ft_lstmin.c math/ft_max.c math/ft_min.c
 
 # --- Object File Generation ---
 OBJS    = $(SRCS:.c=.o)
