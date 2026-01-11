@@ -6,7 +6,7 @@
 /*   By: zaalrafa <zaalrafa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 00:06:37 by zaalrafa          #+#    #+#             */
-/*   Updated: 2025/09/01 14:29:56 by zaalrafa         ###   ########.fr       */
+/*   Updated: 2026/01/11 11:24:48 by zaalrafa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -85,6 +85,8 @@ void				ft_lstadd_back(t_list **lst, t_list *new_node);
 void				ft_lstdelone(t_list *lst, void (*del)(void *));
 void				ft_lstclear(t_list **lst, void (*del)(void *));
 void				ft_lstiter(t_list *lst, void (*f)(void *));
+int					ft_lstmax(t_list *a);
+int					ft_lstmin(t_list *a);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
 // endif
