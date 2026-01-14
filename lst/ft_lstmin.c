@@ -14,14 +14,18 @@
 
 int	ft_lstmin(t_list *a)
 {
-	int	i;
+	int	min;
+	int	cur;
 
-	i = *(int *)a->content;
+	if (!a)
+		return (0);
+	min = *(int *)a->content;
 	while (a)
 	{
-		if (*(int *)a->next->content < i)
-			i = *(int *)a->next->content;
+		cur = *(int *)a->content;
+		if (cur < min)
+			min = cur;
 		a = a->next;
 	}
-	return (i);
+	return (min);
 }

@@ -6,21 +6,25 @@
 /*   By: zaalrafa <zaalrafa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/11 11:21:16 by zaalrafa          #+#    #+#             */
-/*   Updated: 2026/01/11 11:23:57 by zaalrafa         ###   ########.fr       */
+/*   Updated: 2026/01/12 03:53:17 by zaalrafa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../libft.h"
 
 int	ft_lstmax(t_list *a)
 {
-	int	i;
+	int	max;
+	int	cur;
 
-	i = *(int *)a->content;
+	if (!a)
+		return (0);
+	max = *(int *)a->content;
 	while (a)
 	{
-		if (*(int *)a->next->content > i)
-			i = *(int *)a->next->content;
+		cur = *(int *)a->content;
+		if (cur > max)
+			max = cur;
 		a = a->next;
 	}
-	return (i);
+	return (max);
 }
