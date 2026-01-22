@@ -6,12 +6,13 @@
 /*   By: zaalrafa <zaalrafa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/22 12:14:01 by zaalrafa          #+#    #+#             */
-/*   Updated: 2026/01/22 12:14:20 by zaalrafa         ###   ########.fr       */
+/*   Updated: 2026/01/22 19:07:16 by zaalrafa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
-static int hexcond(char p, int *result)
+
+static int	hexcond(char p, int *result)
 {
 	if (p >= '0' && p <= '9')
 		*result = *result * 16 + (p - '0');
@@ -24,11 +25,11 @@ static int hexcond(char p, int *result)
 	return (1);
 }
 
-int ft_hexatoi(const char *str)
+int	ft_hexatoi(const char *str)
 {
-	int     sign;
-	int     result;
-	const char *p;
+	int			sign;
+	int			result;
+	const char	*p;
 
 	sign = 1;
 	result = 0;
