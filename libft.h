@@ -6,10 +6,10 @@
 /*   By: zaalrafa <zaalrafa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 00:06:37 by zaalrafa          #+#    #+#             */
-/*   Updated: 2026/01/12 00:37:00 by zaalrafa         ###   ########.fr       */
+/*   Updated: 2026/01/22 12:14:38 by zaalrafa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBFT_H
+
 # define LIBFT_H
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
@@ -43,6 +43,7 @@ char				*ft_strjoin(char const *s1, char const *s2);
 // endif
 
 // libft
+int ft_hexatoi(const char *str);
 int					ft_max(int a, int b);
 int					ft_min(int a, int b);
 size_t				ft_strlen(const char *str);
