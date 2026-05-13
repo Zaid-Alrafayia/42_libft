@@ -6,7 +6,7 @@
 /*   By: zaalrafa <zaalrafa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/21 00:06:37 by zaalrafa          #+#    #+#             */
-/*   Updated: 2026/01/22 19:07:10 by zaalrafa         ###   ########.fr       */
+/*   Updated: 2026/05/14 00:05:29 by zaalrafa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,7 @@ int					ft_lstmax(t_list *a);
 int					ft_lstmin(t_list *a);
 t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
 						void (*del)(void *));
+int					ft_strcmp(const char *s1, const char *s2);
 // endif
 
 #endif // !LIBFT_H
