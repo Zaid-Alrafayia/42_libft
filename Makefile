@@ -31,7 +31,7 @@ SRCS =  ascii/ft_isalnum.c ascii/ft_isalpha.c ascii/ft_isascii.c \
         str/ft_strjoin.c str/ft_strlcat.c str/ft_strlcpy.c str/ft_strlen.c \
         str/ft_strmapi.c str/ft_strncmp.c str/ft_strnstr.c str/ft_strrchr.c \
         str/ft_strtrim.c str/ft_substr.c str/ft_tolower.c str/ft_toupper.c \
-        printf/ft_printf.c \
+        printf/ft_printf.c str/ft_strcmp\
         gnl/get_next_line.c gnl/get_next_line_utils.c \
 				lst/ft_lstadd_back_bonus.c lst/ft_lstadd_front_bonus.c \
          lst/ft_lstclear_bonus.c lst/ft_lstdelone_bonus.c \
