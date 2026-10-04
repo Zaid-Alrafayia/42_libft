@@ -39,7 +39,7 @@ SRCS =  ascii/ft_isalnum.c ascii/ft_isalpha.c ascii/ft_isascii.c \
          lst/ft_lstmap_bonus.c lst/ft_lstnew_bonus.c \
          lst/ft_lstsize_bonus.c \
          gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c \
-				lst/ft_lstmax.c lst/ft_lstmin.c math/ft_max.c math/ft_min.c convert/ft_hexatoi.c str/arrstr_len.c ascii/is_num.c
+				lst/ft_lstmax.c lst/ft_lstmin.c math/ft_max.c math/ft_min.c convert/ft_hexatoi.c str/arrstr_len.c ascii/is_num.c ascii/is_int.c
 
 # --- Object File Generation ---
 OBJS    = $(SRCS:.c=.o)

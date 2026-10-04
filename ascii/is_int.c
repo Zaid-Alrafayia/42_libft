@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   is_num.c                                           :+:      :+:    :+:   */
+/*   is_int.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zaalrafa <zaalrafa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/04 23:29:09 by zaalrafa          #+#    #+#             */
-/*   Updated: 2026/10/04 23:49:05 by zaalrafa         ###   ########.fr       */
+/*   Created: 2026/10/05 02:15:35 by zaalrafa          #+#    #+#             */
+/*   Updated: 2026/10/05 02:15:52 by zaalrafa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft.h"
 
-int	is_num(const char *str)
+int	is_int(const char *str)
 {
 	int	i;
-	int	has_digit;
-	int	has_dot;
 
 	if (!str || !str[0])
 		return (0);
@@ -25,17 +23,11 @@ int	is_num(const char *str)
 		i++;
 	if (!str[i])
 		return (0);
-	has_digit = 0;
-	has_dot = 0;
 	while (str[i])
 	{
-		if (str[i] >= '0' && str[i] <= '9')
-			has_digit = 1;
-		else if (str[i] == '.' && !has_dot)
-			has_dot = 1;
-		else
+		if (str[i] < '0' || str[i] > '9')
 			return (0);
 		i++;
 	}
-	return (has_digit);
+	return (1);
 }
