@@ -6,7 +6,7 @@
 #    By: zaalrafa <zaalrafa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/08/28 02:08:29 by zaalrafa          #+#    #+#              #
-#    Updated: 2026/06/07 10:20:58 by zaalrafa         ###   ########.fr        #
+#    Updated: 2026/10/04 00:56:52 by zaalrafa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -39,7 +39,7 @@ SRCS =  ascii/ft_isalnum.c ascii/ft_isalpha.c ascii/ft_isascii.c \
          lst/ft_lstmap_bonus.c lst/ft_lstnew_bonus.c \
          lst/ft_lstsize_bonus.c \
          gnl/get_next_line_bonus.c gnl/get_next_line_utils_bonus.c \
-				lst/ft_lstmax.c lst/ft_lstmin.c math/ft_max.c math/ft_min.c convert/ft_hexatoi.c
+				lst/ft_lstmax.c lst/ft_lstmin.c math/ft_max.c math/ft_min.c convert/ft_hexatoi.c str/arrstr_len.c
 
 # --- Object File Generation ---
 OBJS    = $(SRCS:.c=.o)
